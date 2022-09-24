@@ -1,1 +1,11 @@
-<p>login-page works!</p>
+<div class="background-url w-full h-full flex items-center justify-center">
+    <div class="flex flex-col login-card gap-5">
+        <p class="text-xl font-medium">Please sign in to continue</p>
+        <div class="flex flex-col gap-4">
+            <input [(ngModel)]="email" class="input" type="text" placeholder="Email" [disabled]="isWorking">
+            <input [(ngModel)]="password" class="input" type="password" placeholder="Password" [disabled]="isWorking">
+        </div>
+        <button (click)="login()" mat-flat-button class="login-btn text-xl" type="submit" [disabled]="isWorking">Sign
+            in</button>
+    </div>
+</div>
