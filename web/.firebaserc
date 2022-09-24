@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chat-23ed2": {
+      "hosting": {
+        "web": [
+          "chat-23ed2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chat-23ed2"
+  }
+}

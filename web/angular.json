@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "web:build:production",
+            "firebaseProject": "chat-23ed2",
+            "firebaseHostingSite": "chat-23ed2"
+          }
         }
       }
     }
