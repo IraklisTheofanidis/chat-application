@@ -1,0 +1,17 @@
+<div class="header w-full flex flex-row items-center justify-between px-8 py-4 ">
+    <div class="flex flex-row items-center gap-3">
+        <img class="logo" src="/assets/images/chat-logo.jpg" alt="">
+        <span class="text-3xl font-medium">basechat</span>
+    </div>
+    <div class="flex flex-row gap-3 items-center">
+        <ng-container *ngIf="false;else main">
+            <a href="login">Login</a>
+            <a href="register">Register</a>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #main>
+    <span class="font-medium">iraklistheofanidis@gmail.com</span>
+    <a href="logout">Logout</a>
+</ng-template>

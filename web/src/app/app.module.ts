@@ -11,6 +11,7 @@ import { MaterialModule } from './material/material.module';
 import { MainComponent } from './views/main/main.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { RegisterPageComponent } from './views/register-page/register-page.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RegisterPageComponent } from './views/register-page/register-page.compo
     MainComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+.header{
+    box-shadow: 0 2px 3px rgba(0,0,0,0.37), 1px 2px 3px rgba(0,0,0,0.54);
+    z-index: 2;
+    background-color: #EAEAEB;
+}
+
+.logo{
+    height:60px;
+    width:60px;
+}
+
+a{
+    color: #555;
+    text-decoration: none;
+    transition: ease-in 0.2s;
+}
+
+a:hover{
+    color: #1E88E5;
+    transition: ease-in 0.2s;
+}
