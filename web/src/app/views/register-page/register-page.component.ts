@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register-page',
@@ -8,17 +11,34 @@ import { Component, OnInit } from '@angular/core';
     '../login-page/login-page.component.scss',
   ],
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterPageComponent implements OnInit, OnDestroy {
 
   email = ''
   password = '';
   nickname = '';
   isWorking = false;
-  constructor() { }
+  sub?: Subscription;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.sub = this.authService.isAuthenticated().subscribe(user => {
+      if (user) {
+        this.router.navigate(['main']);
+      }
+    });
   }
 
-  register() { }
+  async register() {
+    this.isWorking = true;
+    await this.authService.signUp(this.email, this.password, this.nickname);
+    this.isWorking = false;
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
 
 }

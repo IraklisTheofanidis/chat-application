@@ -4,7 +4,7 @@
         <span class="text-3xl font-medium">basechat</span>
     </div>
     <div class="flex flex-row gap-3 items-center">
-        <ng-container *ngIf="false;else main">
+        <ng-container *ngIf="!authenticated;else main">
             <a href="login">Login</a>
             <a href="register">Register</a>
         </ng-container>
@@ -13,5 +13,5 @@
 
 <ng-template #main>
     <span class="font-medium">iraklistheofanidis@gmail.com</span>
-    <a href="logout">Logout</a>
+    <a (click)="logout()" href="./login">Logout</a>
 </ng-template>
